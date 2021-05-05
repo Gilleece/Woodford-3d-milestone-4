@@ -14,6 +14,10 @@ body {
     background-color: #323744;
 }
 
+.bg-text-blue {
+    background-color: #76c4d2;
+}
+
 .text-blue {
     color: #76c4d2;
 }
