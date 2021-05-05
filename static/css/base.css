@@ -10,6 +10,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+a:hover { 
+    text-decoration: none; 
+}
+
 .bg-main-blue {
     background-color: #323744;
 }
@@ -37,10 +41,6 @@ body {
 
 .logo-font {
     text-transform: uppercase;
-}
-
-.main-logo-link {
-    width: fit-content;
 }
 
 .custom-order-button {
