@@ -18,6 +18,10 @@ body {
     color: #76c4d2;
 }
 
+.home-button-row {
+    margin-top: 25vh;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
