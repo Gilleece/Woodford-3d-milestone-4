@@ -50,13 +50,13 @@ a:hover {
 .custom-order-button {
     background: black;
     color: white;
-    min-width: 260px;
+    width: 280px;
 }
 
 .browse-button {
     background: #76c4d2;
     color: black;
-    min-width: 260px;
+    width: 280px;
 }
 
 .btn-black {
@@ -123,4 +123,22 @@ a:hover {
     .header-container {
         padding-top: 164px;
     }
+}
+
+/* For smaller screens */ 
+@media (max-width: 767.98px) {
+    body {
+        background-size: contain;
+    }
+
+    .custom-order-button {
+        margin-top: 200px;
+    }
+
+    .browse-button {
+        margin-top: 0px;
+    }
+
+    .button-div {
+        padding: 0 !important;    }
 }
