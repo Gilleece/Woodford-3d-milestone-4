@@ -1,5 +1,5 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto d-lg-none bg-text-blue">
+    <ul class="navbar-nav w-auto d-lg-none bg-text-blue p-3">
         <li class="nav-link ml-3"><a href=""><p class="text-black"><strong>Shop</strong></p></a></li>
         <li class="nav-link ml-3"><a href=""><p class="text-black"><strong>Custom Print</strong></p></a></li>
         <li class="nav-link ml-3"><a href=""><p class="text-black"><strong>About Us</strong></p></a></li>
@@ -17,8 +17,8 @@
                     <a href="" class="dropdown-item">My Profile</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    <a href="{% url 'account_signup' %}" class="dropdown-item ml-3 p-2">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item ml-3 p-2">Login</a>
                 {% endif %}
             </div>
         </li>
