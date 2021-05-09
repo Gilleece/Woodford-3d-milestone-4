@@ -47,7 +47,7 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <h2 id="brand-img my-0" class="navbar-brand"><img src="/media/logo_trans.png" alt="Woodford 3D" width="356" height="81"></h2>
+                    <h2 id="brand-img my-0" class="navbar-brand img-responsive"><img src="/media/logo_trans.png" alt="Woodford 3D" width="356" height="81"></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -78,9 +78,9 @@
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <h4 class="my-0 text-blue">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        €{{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        $0.00
+                                        €0.00
                                     {% endif %}
                                 </h4>
                             </div>
