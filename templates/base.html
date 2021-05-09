@@ -39,7 +39,7 @@
     <header class="container-fluid">
         <div id="topnav" class="row bg-main-blue pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-left my-0 p-4">
+                <ul class="list-inline list-unstyled text-left my-0">
                     <li class="list-inline-item mr-5"><a href=""><h4 class="text-blue">Shop</h4></a></li>
                     <li class="list-inline-item mr-5"><a href=""><h4 class="text-blue">Custom Print</h4></a></li>
                     <li class="list-inline-item"><a href=""><h4 class="text-blue">About Us</h4></a></li>
@@ -47,12 +47,12 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <h2 id="brand-img my-0" class="navbar-brand img-responsive"><img src="/media/logo_trans.png" alt="Woodford 3D" width="356" height="81"></h2>
+                    <h2 id="brand-img my-0" class="navbar-brand img-responsive"><img src="/media/logo_trans.png" alt="Woodford 3D" width="235" height="54"></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-right my-0 p-4">
-                     <li class="list-inline-item dropdown mr-5">
+                <ul class="list-inline list-unstyled text-right my-0">
+                     <li class="list-inline-item dropdown">
                         <a class="text-blue nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -74,7 +74,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-blue{% endif %} nav-link" href="">
-                            <div class="text-center">
+                            <div class="text-center ml-5">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <h4 class="my-0 text-blue">
                                     {% if grand_total %}
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg bg-main-blue w-100">
+            <nav class="navbar navbar-expand-lg bg-main-blue w-100 d-lg-none">
                 <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars text-blue" style="font-size:36px;"></i>
                 </button>
