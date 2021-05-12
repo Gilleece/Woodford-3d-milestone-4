@@ -112,14 +112,14 @@ a:hover, .hover-class:hover {
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: white;
+    color: white !important;
 }
 
 .custom-order-button:hover,
 .custom-order-button:active,
 .custom-order-button:focus{
     background: #76c4d2;
-    color: black;
+    color: black !important;
 }
 
 
