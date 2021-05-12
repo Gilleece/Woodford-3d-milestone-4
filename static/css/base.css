@@ -14,16 +14,17 @@ body {
     margin-top: 0;
 }
 
-a:hover { 
+a:hover, .hover-class:hover { 
     text-decoration: none; 
+    color: #eddd2d !important;
+}
+
+.hover-text-blue:hover {
+    background-color: #76c4d2 !important;
 }
 
 .bg-main-blue {
     background-color: #323744;
-}
-
-.bg-text-blue {
-    background-color: #76c4d2;
 }
 
 .bg-transparent {
