@@ -1,0 +1,122 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "name":"3D Map of Ireland",
+         "description":"This beautiful print is based on NASA topgraphical data, giving an accurate elevation map of the entire country. Makes a wonderful gift and fits well into any home.",
+         "price":18,
+         "image":"ireland_map.jpg"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.product",
+      "fields":{
+         "name":"Moon Lamp",
+         "description":"This moon lamp is based on NASA satellite imagery, giving as accurate as possible of a representation of our moon. You can see the detail of the moon like never before! This lamp gradually shifts through multiple colours. Requires 3 AAA batteries (not included).",
+         "price":25,
+         "image":"moon_lamp.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"products.product",
+      "fields":{
+         "name":"Collosal Titan Monitor Accessory",
+         "description":"Great for any attack on titan fan that wants to add some flair to their computer space. This model sits stably on any monitor and replicates the famous scene from the opening of the series.",
+         "price":20,
+         "image":"attact_on_titan.jpg"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.product",
+      "fields":{
+         "name":"Drogon Lamp",
+         "description":"This lamp makes a wonderful gift for any fantasy or Game of Thrones lover. Drogon hovers over the glowing light coming from the flame he is breathing out (don't worry, it's just low power LEDs!!). Powered via USB.",
+         "price":25,
+         "image":"drogon_lamp.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"products.product",
+      "fields":{
+         "name":"Minas Tirith Lamp",
+         "description":"A perfect gift for any Lord of the Rings or fantasy fan. The white city of Minas Tirish, from Return of the King, is printed here in beautiful detail which looks simply stunning when the lamp is turned on. Powered via USB.",
+         "price":25,
+         "image":"minas_tirith_lamp.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"products.product",
+      "fields":{
+         "name":"Meander Lamp",
+         "description":"This Greek style meander lamp is beautiful when placed in a location such as a corner, where it's can patterns can truly shine (pun not intended). This design is both practical and visually appealing. Powered via USB.",
+         "price":25,
+         "image":"meander_lamp.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"products.product",
+      "fields":{
+         "name":"Minecraft Lamp",
+         "description":"Bring a piece of your imagination from Minecraft into the real world! These lamps are based on the diamond ore block. Powered via USB.",
+         "price":22,
+         "image":"minecraft_lamp.jpg"
+      }
+   },
+   {
+      "pk":8,
+      "model":"products.product",
+      "fields":{
+         "name":"Staircase Dice Tower",
+         "description":"This wonderful accessory for any table-top gamer comes in its own case, with ample space to store your dice inside! Simple take out the pieces that clip together in 2 seconds and you have a fully functional dice tower! Comes in any choice of our available colours.",
+         "price":20,
+         "image":"staircase_dice_tower.jpg"
+      }
+   },
+   {
+      "pk":9,
+      "model":"products.product",
+      "fields":{
+         "name":"Dark Fantasy Dice Tower",
+         "description":"For those that want something more inline with the darker side of fantasy. This dice tower has a tray for holding your dice and with help add a menacing atmosphere to each of your throws! Available in any color we offer.",
+         "price":15,
+         "image":"dark_dice_tower.jpg"
+      }
+   },
+   {
+      "pk":10,
+      "model":"products.product",
+      "fields":{
+         "name":"Keep Dice Tower",
+         "description":"This dice tower, based on a castle keep, makes for a lovely addition to any table-top gamer's collection. It can even double as a set piece for world building! Available in any color we offer.",
+         "price":15,
+         "image":"dice_tower.jpg"
+      }
+   },
+   {
+      "pk":11,
+      "model":"products.product",
+      "fields":{
+         "name":"Joycon Grips",
+         "description":"A great accessory for the switch owner that enjoys playing with friends often. Save your hands from cramping and make the usage of a single joy con much more comfortable! Available in any color we offer.",
+         "price":12,
+         "image":"joycon_grips.jpg"
+      }
+   },
+   {
+      "pk":12,
+      "model":"products.product",
+      "fields":{
+         "name":"Hexagon Wall Lamp",
+         "description":"This beautiful wall lamp can shift colours and patterns, making for a stunning addition to any room that it's placed in. Please note that orders for this product can take up to 2 weeks to ship, as each are made to order and involve 50+ hours of 3D printing.",
+         "price":89,
+         "image":"hexagon_LED_wall_lamp.jpg"
+      }
+   }
+]
