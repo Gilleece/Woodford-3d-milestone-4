@@ -35,6 +35,10 @@ a:hover, .hover-class:hover {
     background-color: #76c4d2;
 }
 
+.bg-white {
+    background-color: white;
+}
+
 .text-blue {
     color: #76c4d2;
 }
