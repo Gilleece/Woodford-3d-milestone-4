@@ -161,6 +161,10 @@ a:hover, .hover-class:hover {
         left: 0;
         z-index: 1030;
     }
+
+    .header-padding {
+        padding-top: 10vh;
+    }
 }
 
 /* For smaller screens */ 

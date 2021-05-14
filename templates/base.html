@@ -40,9 +40,9 @@
         <div id="topnav" class="row bg-main-blue pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-left my-0">
-                    <li class="list-inline-item mr-5"><a href="{% url 'products' %}"><h4 class="text-blue hover-class">Shop</h4></a></li>
-                    <li class="list-inline-item mr-5"><a href="{% url 'custom' %}"><h4 class="text-blue hover-class">Custom Print</h4></a></li>
-                    <li class="list-inline-item"><a href=""><h4 class="text-blue hover-class">About</h4></a></li>
+                    <li class="list-inline-item mr-5"><a href="{% url 'products' %}"><h5 class="text-blue hover-class">Shop</h5></a></li>
+                    <li class="list-inline-item mr-5"><a href="{% url 'custom' %}"><h5 class="text-blue hover-class">Custom Print</h5></a></li>
+                    <li class="list-inline-item"><a href="{% url 'about' %}"><h5 class="text-blue hover-class">About</h5></a></li>
                 </ul>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
@@ -56,7 +56,7 @@
                         <a class="text-blue nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
-                                <h4 class="my-0">My Account</h4>
+                                <h5 class="my-0">My Account</h5>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0 bg-text-blue" aria-labelledby="user-options">
@@ -76,13 +76,13 @@
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-blue{% endif %} nav-link" href="">
                             <div class="text-center ml-5">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <h4 class="my-0 text-blue hover-class">
+                                <h5 class="my-0 text-blue hover-class">
                                     {% if grand_total %}
                                         €{{ grand_total|floatformat:2 }}
                                     {% else %}
                                         €0.00
                                     {% endif %}
-                                </h4>
+                                </h5>
                             </div>
                         </a>
                     </li>
