@@ -115,6 +115,20 @@ a:hover, .hover-class:hover {
     transform: translate(-50%, -50%);
 }
 
+.keep-shopping-button {
+    background: #76c4d2;
+    color: black;
+}
+
+.add-button {
+    background: black;
+    color: white;
+}
+
+.add-button:hover {
+    color: grey;
+}
+
 .btn-black {
     background: black;
     color: white;
