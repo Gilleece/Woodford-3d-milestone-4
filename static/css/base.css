@@ -51,6 +51,20 @@ a:hover, .hover-class:hover {
     padding: 0 !important;
 }
 
+.cart {
+    min-height: 80vh;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #323744;
+	z-index: -1;
+}
+
 /* Mobile styling */
 
 .navbar {
