@@ -1,3 +1,5 @@
+/* -------------------------------- General Styling */
+
 html {
     height: 100%
 }
@@ -65,18 +67,17 @@ a:hover, .hover-class:hover {
 	z-index: -1;
 }
 
-/* Mobile styling */
-
-.navbar {
-    padding: 0 !important;
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
-.fa-bars:before {
-    padding: 10px;
+.text-black {
+    color: #000 !important;
 }
 
-.mobile-icon-padding {
-    padding: 10px;
+.border-black {
+    border: 1px solid black !important;
 }
 
 
@@ -92,6 +93,22 @@ a:hover, .hover-class:hover {
 .logo-font {
     text-transform: uppercase;
 }
+
+/* -------------------------------- Mobile styling */
+
+.navbar {
+    padding: 0 !important;
+}
+
+.fa-bars:before {
+    padding: 10px;
+}
+
+.mobile-icon-padding {
+    padding: 10px;
+}
+
+/* -------------------------------- Buttons */
 
 .custom-order-button {
     background: black;
@@ -134,11 +151,6 @@ a:hover, .hover-class:hover {
     color: white;
 }
 
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
 .custom-order-button:hover,
 .custom-order-button:active,
 .custom-order-button:focus,
@@ -159,21 +171,11 @@ a:hover, .hover-class:hover {
     color: black !important;
 }
 
-
 .browse-button:hover,
 .browse-button:active,
 .browse-button:focus{
     background: black;
     color: white;
-}
-
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
 }
 
 /* -------------------------------- Media Queries */
