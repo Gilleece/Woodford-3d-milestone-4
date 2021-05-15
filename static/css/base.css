@@ -45,6 +45,14 @@ a:hover, .hover-class:hover {
     color: #76c4d2;
 }
 
+.text-black {
+    color: #000 !important;
+}
+
+.text-yellow {
+    color: #eddd2d;
+}
+
 .home-button-row {
     margin-top: 25vh;
 }
@@ -70,10 +78,6 @@ a:hover, .hover-class:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
-}
-
-.text-black {
-    color: #000 !important;
 }
 
 .border-black {
@@ -176,6 +180,23 @@ a:hover, .hover-class:hover {
 .browse-button:focus{
     background: black;
     color: white;
+}
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
 }
 
 /* -------------------------------- Media Queries */
