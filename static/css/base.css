@@ -98,20 +98,6 @@ a:hover, .hover-class:hover {
     text-transform: uppercase;
 }
 
-/* -------------------------------- Mobile styling */
-
-.navbar {
-    padding: 0 !important;
-}
-
-.fa-bars:before {
-    padding: 10px;
-}
-
-.mobile-icon-padding {
-    padding: 10px;
-}
-
 /* -------------------------------- Buttons */
 
 .custom-order-button {
@@ -197,6 +183,20 @@ a:hover, .hover-class:hover {
 
 .toast-capper {
     height: 2px;
+}
+
+/* -------------------------------- Mobile styling */
+
+.navbar {
+    padding: 0 !important;
+}
+
+.fa-bars:before {
+    padding: 10px;
+}
+
+.mobile-icon-padding {
+    padding: 10px;
 }
 
 /* -------------------------------- Media Queries */
