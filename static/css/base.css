@@ -134,6 +134,11 @@ a:hover, .hover-class:hover {
     color: white;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 .custom-order-button:hover,
 .custom-order-button:active,
 .custom-order-button:focus,
