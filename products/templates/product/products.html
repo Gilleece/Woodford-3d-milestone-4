@@ -15,6 +15,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="product-container col-10 offset-1">
+                <div class="alert alert-success text-center">
+                    Free delivery on orders over €{{ free_delivery_threshold }}!            
+                </div>
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
