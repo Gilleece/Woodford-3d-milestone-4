@@ -12,7 +12,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container mt-5 mb-2 bg-white cart container-shadow">
+    <div class="container mb-2 bg-white cart container-shadow">
         <div class="row">
             <div class="col">
                 <h2 class="logo-font mt-4 text-center">Shopping Bag</h2>
@@ -34,7 +34,7 @@
                                 {% endif %}                                
                             </div>
                             <div class="col-4 col-md-3 text-center">
-                                <p class="my-0"><strong>Price per unit:</strong><br> €{{ item.product.price }}</p>
+                                <p class="my-0"><strong>Per unit:</strong><br> €{{ item.product.price }}</p>
                             </div>
                             <div class="col-4 col-md-3 text-center">
                                 <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
