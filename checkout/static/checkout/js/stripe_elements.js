@@ -25,7 +25,7 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {style: style, hidePostalCode: true}); // pass in the option to disable the zip code for the card
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
