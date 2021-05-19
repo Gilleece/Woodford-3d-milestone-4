@@ -12,6 +12,8 @@
 
 {% block content %}
     <div class="overlay"></div>
+    <br class="d-none d-md-block">
+    <br class="d-none d-md-block">
     <div class="container mb-2 bg-white cart container-shadow">
         <div class="row">
             <div class="col">
@@ -28,9 +30,9 @@
                                     <p class="my-0"><strong>Color: </strong>{{ item.color|upper }}</p>
                                 {% endif %}
                                 {% if item.product.image %}
-                                <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <img class="img-bag rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                <img class="img-bag rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                 {% endif %}                                
                             </div>
                             <div class="col-4 col-md-3 text-center">
