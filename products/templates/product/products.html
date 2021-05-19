@@ -14,10 +14,7 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="alert bg-text-blue text-black text-center rounded-0 mt-2">
-                    Free delivery on orders over €{{ free_delivery_threshold }}!            
-                </div>
+            <div class="product-container col-10 offset-1">                
                 <div class="col-10 offset-1 col-lg-4 offset-lg-4 mt-3 mb-3">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
@@ -31,6 +28,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="alert bg-white text-black text-center rounded-0 mt-2">
+                    Free delivery on orders over €{{ free_delivery_threshold }}!            
                 </div>
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
