@@ -375,3 +375,10 @@ input[name='q']::placeholder {
     transform: translate(-50%, -50%);
     }
 }
+
+
+.product-card:hover {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
