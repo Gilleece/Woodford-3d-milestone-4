@@ -25,10 +25,11 @@
                 {% if bag_items %}
                             {% for item in bag_items %}                            
                             <div class="col-12 col-md-3 text-center mt-5 mb-3">
-                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <p class="my-0"><strong>{{ item.product.name }}</strong>
                                 {% if item.product.has_colors %}
-                                    <p class="my-0"><strong>Color: </strong>{{ item.color|upper }}</p>
+                                    <small>(<strong>Color: </strong>{{ item.color|upper }})</small>
                                 {% endif %}
+                                </p>
                                 {% if item.product.image %}
                                 <img class="img-bag rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
