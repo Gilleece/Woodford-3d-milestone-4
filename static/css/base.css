@@ -293,6 +293,51 @@ input[name='q']::placeholder {
     right: 36px;
 }
 
+/* Card animation and hover effect */
+
+.image-box {
+    z-index: 10 !important;
+}
+
+.card-text-box {
+    z-index: 9999999 !important;
+}
+
+.card-flyer .image-box{
+  overflow: hidden;
+}
+.card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+}
+.card-flyer:hover .image-box img{
+  opacity: 0.9;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+.card-flyer{
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.card-flyer:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+
+
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
     border-bottom-color: #007bff !important;
