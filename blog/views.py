@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
 from .models import Post
@@ -10,9 +11,21 @@ def all_posts(request):
     """ A view to return the main blog page """
 
     blogs = Post.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse('blog'))
+            
+            queries = Q(title__icontains=query) | Q(content__icontains=query)
+            blogs = blogs.filter(queries)
 
     context = {
         'blogs': blogs,
+        'search_term': query,
     }
 
     return render(request, 'blog/all_posts.html', context)

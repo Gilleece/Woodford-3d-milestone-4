@@ -15,15 +15,31 @@
     <div class="container-fluid">
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <a href="{% url 'add_post' %}" class="btn keep-shopping-button rounded-0 btn-lg mb-3">
-                            <span class="text-uppercase">Add Post</span>
-                            <span class="icon">
-                                <i class="fa fa-pencil"></i>
-                            </span>
-                        </a>
+                {% if request.user.is_superuser %}
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <a href="{% url 'add_post' %}" class="btn keep-shopping-button rounded-0 btn-lg mb-3">
+                                <span class="text-uppercase">Add Post</span>
+                                <span class="icon">
+                                    <i class="fa fa-pencil"></i>
+                                </span>
+                            </a>
+                        </div>
                     </div>
+                {% endif %}
+                <div class="col-10 offset-1 col-lg-4 offset-lg-4 mt-3 mb-3">
+                    <form method="GET" action="{% url 'blog' %}">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our blog">
+                            <div class="input-group-append">
+                                <button class="form-control btn keep-shopping-button border border-black rounded-0 hover-class" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="row">                    
                     {% for blog in blogs %}
