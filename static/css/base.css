@@ -113,6 +113,16 @@ a:hover, .hover-class:hover {
     height: auto;
 }
 
+.blog-card-img {
+    height: 40vh;
+    object-fit: cover;
+}
+
+.blog-main-img {
+    max-height: 50vh;
+    object-fit: contain;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
