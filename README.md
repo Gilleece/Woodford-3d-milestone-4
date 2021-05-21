@@ -10,6 +10,11 @@ python manage.py graph_models -a > dotfile.dot
 ```
 
 
+Contact form tut: https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid
+
+Blog tut: https://www.youtube.com/watch?v=AF4ji8bb1M8
+
+
 Welcome Gilleece,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
