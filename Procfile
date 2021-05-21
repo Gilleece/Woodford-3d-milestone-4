@@ -1,0 +1,1 @@
+web: gunicorn woodford_3d.wsgi:application

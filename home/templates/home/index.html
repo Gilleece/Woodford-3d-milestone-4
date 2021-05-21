@@ -83,13 +83,6 @@
 		  interval: 3000,
 		  cycle: true
 		});
-	    
-	    $("#signupButton").click(function(e){
-	    	e.preventDefault();
-	    	var url = $(this).attr("href");
-	    	var win = window.open(url, '_blank');
-	    	$('#mailingListModal').modal('hide');
-	    })
         sessionStorage.adModal = 1;
         }
     </script>
