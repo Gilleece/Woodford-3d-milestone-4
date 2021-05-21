@@ -54,7 +54,7 @@ def add_post(request):
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added post!')
+            messages.info(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
         else:
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
@@ -81,7 +81,7 @@ def edit_post(request, url):
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             blog = form.save()
-            messages.success(request, 'Successfully updated product!')
+            messages.info(request, 'Successfully updated product!')
             return redirect(reverse('blog_post', args=[url]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
@@ -107,5 +107,5 @@ def delete_post(request, url):
 
     blog = get_object_or_404(Post, url=url)
     blog.delete()
-    messages.success(request, 'Post deleted!')
+    messages.info(request, 'Post deleted!')
     return redirect(reverse('blog'))
