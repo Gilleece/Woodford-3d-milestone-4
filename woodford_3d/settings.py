@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'blog',
+    'marketing',
     
     # Other
     'crispy_forms',
@@ -192,9 +193,15 @@ CONTACT_EMAIL = 'contact@woodford3D.com'
 ADMIN_EMAIL = ['contact@woodford3D.com']
 
 
-# Twilio SendGrid
+# Twilio SendGrid (For contact form)
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
+
+
+# Mail Chimp (For mailing list)
+MAILCHIMP_API_KEY=''
+MAILCHIMP_DATA_CENTER = 'us6'
+MAILCHIMP_EMAIL_LIST_ID = 'de42c61472'

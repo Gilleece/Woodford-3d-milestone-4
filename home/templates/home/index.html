@@ -9,6 +9,27 @@
     </div>   
 {% endblock %}
 
+{% block extra_js %}
+<script>
+    // Aligns bootstrap modal vertically, credit to: https://www.tutorialrepublic.com/faq/how-to-align-bootstrap-modal-vertically-center.php
+    $(document).ready(function(){
+        function alignModal(){
+            var modalDialog = $(this).find(".modal-dialog");
+            
+            // Applying the top margin on modal to align it vertically center
+            modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+        }
+        // Align modal when it is displayed
+        $(".modal").on("shown.bs.modal", alignModal);
+        
+        // Align modal when user resize the window
+        $(window).on("resize", function(){
+            $(".modal:visible").each(alignModal);
+        });   
+    });
+</script>
+{% endblock %}
+
 
 {% block content %}
     <div class="container">
@@ -23,5 +44,35 @@
             </div>
         </div>
     </div>
+
+        <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-text-blue">        
+            <div class="modal-body text-center">
+                <span class="mt-2"><strong>Interested in updates from Woodford 3d?</strong></span>
+                <form class="mt-4" action="{% url 'email_list_signup' %}" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}            
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="keep-shopping-button btn btn-lg rounded-0" data-dismiss="modal">Close</button>
+                <button type="submit" class="add-button btn btn-lg rounded-0">Get our newsletter.</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
     
+    
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'home/js/home.js' %}"></script>
 {% endblock %}

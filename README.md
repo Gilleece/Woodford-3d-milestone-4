@@ -14,6 +14,9 @@ Contact form tut: https://www.twilio.com/blog/build-contact-form-python-django-t
 
 Blog tut: https://www.youtube.com/watch?v=AF4ji8bb1M8
 
+Align modal vertically: https://www.tutorialrepublic.com/faq/how-to-align-bootstrap-modal-vertically-center.php#:~:text=Answer%3A%20Use%20the%20CSS%20margin,described%20in%20the%20example%20below.
+
+Mailing list tut: https://www.youtube.com/watch?v=2KeV42YaPes
 
 Welcome Gilleece,
 
