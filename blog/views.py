@@ -17,9 +17,10 @@ def all_posts(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('blog'))
-            
+
             queries = Q(title__icontains=query) | Q(content__icontains=query)
             blogs = blogs.filter(queries)
 
@@ -30,7 +31,7 @@ def all_posts(request):
 
     return render(request, 'blog/all_posts.html', context)
 
-    
+
 def blog_post(request, url):
     """ A view to return the main blog page """
 
@@ -57,10 +58,12 @@ def add_post(request):
             messages.info(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add post. Please ensure the form is valid.'
+                )
     else:
         form = BlogForm()
-        
+
     template = 'blog/add_post.html'
     context = {
         'form': form,
@@ -84,7 +87,10 @@ def edit_post(request, url):
             messages.info(request, 'Successfully updated product!')
             return redirect(reverse('blog_post', args=[url]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+                )
     else:
         form = BlogForm(instance=blog)
         messages.info(request, f'You are editing the post: {blog.title}')

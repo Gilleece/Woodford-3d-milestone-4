@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'profiles',
     'blog',
     'marketing',
-    
+
     # Other
     'crispy_forms',
     'django_extensions',

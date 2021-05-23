@@ -14,10 +14,14 @@ def about(request):
             messages.info(request, 'Successfully sent message!')
             email_subject = f'New contact {form.cleaned_data["email"]}: {form.cleaned_data["subject"]}'
             email_message = form.cleaned_data['message']
-            send_mail(email_subject, email_message, settings.CONTACT_EMAIL, settings.ADMIN_EMAIL)
+            send_mail(email_subject, email_message,
+                      settings.CONTACT_EMAIL, settings.ADMIN_EMAIL)
             return redirect(reverse('about'))
         else:
-            messages.error(request, 'Failed to send message. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to send message. Please ensure the form is valid.'
+                )
     form = ContactForm()
     context = {
         'form': form
