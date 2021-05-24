@@ -6,7 +6,7 @@
 
 ![](media/responsiveness.png)
 
-This website is an ecommerce site for a small 3D printing business that sells a limited selection of bespoke goods that are on rotation from time to time. Due to the small business nature and the constant development of the products and designs, a blog is a welcome addition for customers that are interested. The mailing list doubles up as another way for interested people to keep up-to-date with the news of the business. The site is built using Django, Bootstrap and jQuery. Backend, templating and dynamic html generation is handled using Python with certain front-end design elements (such as positioning and timing of the mailing list modal and preview text for the blog) were done using javascript. Payments are provided with Stripe. The mailing list is powered by Mailchimp and the contact form, along with all account/order related emails, are delivered using SendGrid. The site is hosted on Heroku primarily, with static files and images stored on Amazon Web Services. 
+This website is an e-commerce site for a small 3D printing business that sells a limited selection of bespoke goods that are on rotation from time to time. Due to the small business nature and the constant development of the products and designs, a blog is a welcome addition for customers that are interested. The mailing list doubles up as another way for interested people to keep up-to-date with the news of the business. The site is built using Django, Bootstrap and jQuery. Backend, templating and dynamic html generation is handled using Python with certain front-end design elements (such as positioning and timing of the mailing list modal and preview text for the blog) were done using javascript. Payments are provided with Stripe. The mailing list is powered by Mailchimp and the contact form, along with all account/order related emails, are delivered using SendGrid. The site is hosted on Heroku primarily, with static files and images stored on Amazon Web Services. 
 
 # Table of contents
 1. [UX](#UX)
@@ -28,7 +28,7 @@ This website is an ecommerce site for a small 3D printing business that sells a 
     4. [Known Issues](#issues)
 6. [Deployment](#deployment)
     1. [Using Heroku](#heroku)
-    2. [Building Upon This Project](#building)
+    2. [Local](#local)
 7. [Credits](#credits)
     1. [Tutorials referenced](#tutorials)
 
@@ -92,13 +92,13 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
 ## Design: <a name="design"></a>
 
 ### Colour Scheme: <a name="colour"></a>
-![](static/images/color.png)
-- The site's primary colours are two shades of blue and a yellow. The colours are meant to be somewhat reserved and subtle, allowing for attention to be focused on the images of the products and to further solidify the minimalist design langue.
+![](/media/colors.png)
+- The site's primary colours are the two shades of blue and the yellow in the image above. The colours are meant to be somewhat reserved and subtle, allowing for attention to be focused on the images of the products and to solidify the minimalist design langue.
 - I wanted to deliberately avoid a variety of colour, keeping the site content and information focused. 
 - As development continued I decided to also include white for the shopping bag and check out, as it seemed more appropriate and would instill more confidence in the user making a purchase. While the original colours in this context looked appealing, it did not appear quite right for the payment side of things.
 
 ### Typography: <a name="typo"></a>
-- Site wide, Helvetica Neue is used.
+- Site wide, Poppins is used.
 - A single font was chosen to keep inline with the minimalist design philosophy. 
 
 ### Layout: <a name="layout"></a>
@@ -146,16 +146,24 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
     - Bootstrap was used to assist with the responsiveness and styling of the website. 
 1. [Python:](https://www.python.org/)
     - All backend was built using Python and Pymongo.
-1. [MongoDB:](https://www.mongodb.com/)
-    - MongoDB was the database service for the site.
+1. [Django:](https://www.djangoproject.com/)
+    - MongoDB was the framework for the site.
+1. [Javascript:](https://www.javascript.com/)
+    - JS was used for dynamic front-end.
 1. [Heroku:](https://www.heroku.com/)
     - Heroku was used to host the site and test it in a live environment.
-1. [Bootstrap 5:](https://getbootstrap.com/)
+1. [Amazon Web Services:](https://aws.amazon.com/)
+    - AWS was used to host the static files and images for the site.
+1. [Bootstrap 4:](https://getbootstrap.com/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [MailChimp:](https://mailchimp.com/)
+    - MailChimp was used for the mailing list.
+1. [SendGrid](https://sendgrid.com/)
+    - SendGrid is used for all email on the site except the mailing list (such as account/order confirmation emails, the contact us form etc)
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-1. [Flask:](https://flask.palletsprojects.com/en/1.1.x/)
-    - This was used for the sites structure and for all forms.
+1. [jQuery:](https://jquery.com/)
+    - This was used for certain aspects of dealing with dynamic HTML and displaying front-end.
 1. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
@@ -164,7 +172,16 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
     - Balsamiq was used to create the wireframes during the design process.   
 1. [Gitpod:](https://www.gitpod.io/)
     - This was my IDE for the project. 
-
+1. [Google Fonts](https://fonts.google.com/)
+    - I used Google Fonts to provide the font used sitewide. 
+1. [Google Fonts](https://fonts.google.com/)
+    - I used Google Fonts to provide the font used sitewide. 
+1. [SQLite3](https://www.sqlite.org/releaselog/3_32_3.html)
+    - I used sqlite as database during development.
+1. [PostgreSQL](https://www.postgresql.org/)
+    - I used PostgreSQL as the database for live deployment.
+1. [Stripe](https://stripe.com/)
+    - Stripe is the payment processor on the site.
 
 
 ## Testing <a name="testing"></a>
@@ -254,10 +271,10 @@ These are examples of some bugs that my manual testing uncovered, and how I fixe
 
 #### Bug 4:
 
-- Expected: Hovering over any parts of the navbar (except for the business name) should have the text turn to yellow. 
-- Testing: Tested the feature by hovering over individual elements.
-- Result: The bag font awesome icon and the price underneath were showing their hover state independently rather than together.
-- Fix: I placed both elements into the same div and through a class tag and css applied the hover effect to both elements at once.
+- Expected: Site should pass through the W3 Html validator without issue. 
+- Testing: Ran the site's various URLs through the W3 validator.
+- Result: Errors appeared on index.html. The validator said that there was an opening form tag with no closing form tag. It also, to my surprise, said there was a closing form tag and no opening form tag. The functionality of the form was fine and obviously these two tags were for eachother.
+- Fix: As it turns out, the form was split across two divs (due to the layout intention). However, moving the 2 divs inside the form maintained the layout and fixed the validator error.
 
 ### Known issues: <a name="issues"></a>
 
@@ -271,46 +288,74 @@ W3C Validator CSS resulted in no errors.
 
 Google Lighthouse results:
 
-![](static/images/lighthouse.png)
+![](/media/lighthouse.png)
 
 ## Deployment <a name="deployment"></a>
 
 ### Using Heroku: <a name="heroku"></a>
 
-Hosting this project on Heroku required the following: - 
-1. Make sure all project keys and secret values are placed in the heroku Config Vars for production.
-2. Make sure requirements.txt is up to date with the following command: 	
-		```
-		pip3 freeze > requirements.txt
-		```
-3. Set up the Procfile - *A Procfile is required by Heroku .*
-4. Set Flask's debugging to False.
-5. Push all code to GitHub then use Heroku's GitHub function to deploy from GitHub to the production ready app.
+[heroku](https://dashboard.heroku.com) was used for the live deployment of this project, through the master branch of my github repository. The following steps were implemented to deploy this project:
 
+1. Install **gunicorn** package to run the application on Heroku.
+    - `sudo pip3 install gunicorn`
+2. Install **pycopg2** to connect to PostgreSQL
+    - `sudo pip3 install psycopg2`
+3. Create a **requirements.txt** file
+    - `sudo pip3 freeze --local > requirements.txt`
+4. Create a new Heroku application
+    - Sign up to a new account if you do not already have one.
+    - Create a new application by clicking on `new` then `create new app`.
+    - Set the name of your application and select your region and click on `create app` to finalize the creation of your app. 
+5. Install PostgreSQL add-on
+    - `heroku addons:create heroku-postgresql:hobby-dev`
+6. Create a **Procfile** in the root directory
+    - content: `web: gunicorn spacex.wsgi:application`
+7. Set the following config variables as environment variables:
 
-**Upon successful deployment Heroku will give you the URL for your hosted app**
+Config Vars | Value
+----------- | -------------
+AWS_ACCESS_KEY_ID | `<AWS_ACCESS_KEY_ID>`
+AWS_SECRET_ACCESS_KEY | `<AWS_SECRET_ACCESS_KEY>`
+DATABASE_URL | `<DATABASE_URL>`
+MAILCHIMP_API_KEY | `<MAILCHIMP_API_KEY>`
+SECRET_KEY | `<SECRET_KEY>`
+SENDGRID_API_KEY | `<SENDGRID_API_KEY>`
+STRIPE_PUBLIC_KEY | `<STRIPE_PUBLIC_KEY>`
+STRIPE_SECRET_KEY | `<STRIPE_SECRET_KEY>`
+STRIPE_WH_SECRET | `<STRIPE_WH_SECRET>`
+USE_AWS | `<TRUE>`
 
-### Building upon this project: <a name="building"></a>
+5. In the `Deploy` tab, choose `Connect Github` as **Deployment Method** and *Enable Automatic Deployment* from the Github master branch so that any new commit will be automatically deployed through your heroku app. 
 
-To get set up with a copy of my project you can do these multiple ways. 
+### Local Deployment: <a name="local"></a>
 
-**Via GitHub** -  
-1. You can manually download locally to your machine and then upload to your preferred IDE. 
-2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
-3. You will need to update a few environment variables before we can run the app.
-	1. `app.config["MONGO_DBNAME"] = "filament_review"`
-	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
-	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
-4. Once the above steps are complete you can try run the application using `python3 app.py`
+To run the project locally. Install:
+* Git
+* Django
 
-**Via the CLI** -
-1. Clone my repo via Git using the following command `https://github.com/Gilleece/filament-review`
-2. Install the projects requirements.txt using `pip3 install -r requirements.txt`
-3. You will need to update a few environment variables before we can run the app.
-	1. `app.config["MONGO_DBNAME"] = "filament_review"`
-	2. `app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")`
-	3. `app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")`
-4. Once the above steps are complete you can try run the application using `python3 app.py`
+After installing these you need to:
+1. Download this repository clicking in ‘Clone or Dowload’ on top of this page, then click on ‘Download ZIP’ and extract the files in the folder you will be working on.
+2. Open the folder where you download the repository in your code editor
+3. Create a `.env` file containing the following credentials:
+
+Env Vars | Value
+----------- | -------------
+AWS_ACCESS_KEY_ID | `<AWS_ACCESS_KEY_ID>`
+AWS_SECRET_ACCESS_KEY | `<AWS_SECRET_ACCESS_KEY>`
+DATABASE_URL | `<DATABASE_URL>`
+MAILCHIMP_API_KEY | `<MAILCHIMP_API_KEY>`
+SECRET_KEY | `<SECRET_KEY>`
+SENDGRID_API_KEY | `<SENDGRID_API_KEY>`
+STRIPE_PUBLIC_KEY | `<STRIPE_PUBLIC_KEY>`
+STRIPE_SECRET_KEY | `<STRIPE_SECRET_KEY>`
+STRIPE_WH_SECRET | `<STRIPE_WH_SECRET>`
+USE_AWS | `<TRUE>`
+
+4. Install the required modules using this command:
+`pip -r requirements.txt`
+
+You can run the app by running: `python manage.py runserver`
+The project will run at `http://127.0.0.1:8000`
 
 ## Credits <a name="credits"></a>
 - Thanks to [Reuben Ferrante](https://github.com/arex18), my Code Institute mentor, for his guidance and insight.
@@ -319,11 +364,13 @@ To get set up with a copy of my project you can do these multiple ways.
 
 - Credit to the Boutique Ado project from Code Institute.
 
+- Credit to the Django and Bootstrap documentation for their great examples.
+
 ### Tutorials referenced: <a name="tutorials"></a>
 
-- Contact form tutotial: https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid
+- Contact form tutorial: https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid
 
-- Blog tutotial: https://www.youtube.com/watch?v=AF4ji8bb1M8
+- Blog tutorial: https://www.youtube.com/watch?v=AF4ji8bb1M8
 
 - Align modal vertically: https://www.tutorialrepublic.com/faq/how-to-align-bootstrap-modal-vertically-center.php#:~:text=Answer%3A%20Use%20the%20CSS%20margin,described%20in%20the%20example%20below.
 
