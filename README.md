@@ -1,4 +1,4 @@
-# Filament Review - Milestone 3 Project
+# Woodford 3D - Milestone 4 Project
 
 [Live link](https://woodford3d.herokuapp.com/)
 
@@ -6,7 +6,7 @@
 
 ![](media/responsiveness.png)
 
-Filament Review is my milestone 3 project. This site is intended to be a community driven resource for reviews of various 3D printer materials. Users can view reviews for the material of their choice, and make an account to upload their own reviews which the can later edit and delete if they want. The site is built using HTML, CSS, Python, Flask and MongoDB. 
+This website is an ecommerce site for a small 3D printing business that sells a limited selection of bespoke goods that are on rotation from time to time. Due to the small business nature and the constant development of the products and designs, a blog is a welcome addition for customers that are interested. The mailing list doubles up as another way for interested people to keep up-to-date with the news of the business. The site is built using Django, Bootstrap and jQuery. Backend, templating and dynamic html generation is handled using Python with certain front-end design elements (such as positioning and timing of the mailing list modal and preview text for the blog) were done using javascript. Payments are provided with Stripe. The mailing list is powered by Mailchimp and the contact form, along with all account/order related emails, are delivered using SendGrid. The site is hosted on Heroku primarily, with static files and images stored on Amazon Web Services. 
 
 # Table of contents
 1. [UX](#UX)
@@ -34,12 +34,14 @@ Filament Review is my milestone 3 project. This site is intended to be a communi
 
 ## UX <a name="UX"></a>
 
-The primary goal with the sites UX, in terms of UI, was to make the site easy to use and look appealing to the type of person that uses 3D printers, hence the graph paper theme to emulate a hobbyist work environment. The website is designed to clearly and simply present data to the user that they will find useful and help them acheive their goal of finding reviews.
+The site was designed with an extremely clean and minimalist approach in mind. The idea of the business is to have a small number of items that are sold at any one time, so drawing the user's primary attention to these items is key, along with a focus on the attention to detail and passion of the business which is highlighted through the blog. The site deliberately avoids any additional information than what is strictly necessary for the products (Price, image, name, description). The account/payment process is kept as clear and straightforward as possible, with some emphasis on the free shipping threshold as a means of enticing additional sales on the same transaction.
+
+The mailing list that pops up is meant to be useful and non-intrusive. As soon as a customer sees it, regardless of if they sign up or not, a flag is added to local storage through JS with the intention that they will not be pestered by the modal appearing again. This is to keep the site as frictionless as possible while also briefly initally presenting them with the option to stay informed about the business as new products develop. 
 
 ### User Stories: <a name="userstories"></a>
 
 #### Viewing and Navigation
-| User Story  | User | Wants to...  | So that they can... |
+| #  | User | Wants to...  | So that they can... |
 | ------------- | ------------- | ------------- | ------------- |
 | 1  | Shopper  |  View a list of products  | Select some to purchase  |
 | 2  | Shopper  |  View individual product details | Identify the price, description, product rating, product image and available colors  |
@@ -50,7 +52,7 @@ The primary goal with the sites UX, in terms of UI, was to make the site easy to
 
 
 #### Registration and User Accounts
-| User Story  | User | Wants to...  | So that they can... |
+| #  | User | Wants to...  | So that they can... |
 | ------------- | ------------- | ------------- | ------------- |
 | 7  | Site User  | Easily register for an account  | Have a personal account and be able to view their profile |
 | 8  | Site User  | Easily login or logout  | Access their personal information  |
@@ -59,14 +61,14 @@ The primary goal with the sites UX, in terms of UI, was to make the site easy to
 | 11 | Site User  | Have a personalized user profile  | View their personal order history and order confirmations, and save their payment information  |
 
 #### Sorting and Searching
-| User Story  | User | Wants to...  | So that they can... |
+| #  | User | Wants to...  | So that they can... |
 | ------------- | ------------- | ------------- | ------------- |
 | 12  | Shopper  | Search for a product by name or description  | Find a specific product they'd like to purchase  |
 | 13  | Shopper  | Search for a blog post by name or description  | Find a specific post they'd like to read  |
 | 14  | Shopper  | Easily see what they searched for  | To quickly find the product or blog post they are interested in  |
 
 #### Purchasing and Checkout
-| User Story  | User | Wants to...  | So that they can... |
+| #  | User | Wants to...  | So that they can... |
 | ------------- | ------------- | ------------- | ------------- |
 | 15  | Shopper  | Easily select the colour and quantity of a product when purchasing it  | Ensure they don't accidentally select the wrong product, quanity or colour  |
 | 16  | Shopper  | View items in their bag to be purchased  | Identify the total cost of their purchase and all items they will receive  |
@@ -77,7 +79,7 @@ The primary goal with the sites UX, in terms of UI, was to make the site easy to
 | 21  | Shopper  | Receive an email confirmation after checking out  | Keep the confirmation of what they've purchased for their records   |
 
 #### Admin and Store Management
-| User Story  | User | Wants to...  | So that they can... |
+| #  | User | Wants to...  | So that they can... |
 | ------------- | ------------- | ------------- | ------------- |
 | 22  | Store Owner  | Add a product  | Add new items to their store  |
 | 23  | Store Owner  | Edit/Update a product  | Change product prices, descriptions, images and other product criteria  |
@@ -91,20 +93,24 @@ The primary goal with the sites UX, in terms of UI, was to make the site easy to
 
 ### Colour Scheme: <a name="colour"></a>
 ![](static/images/color.png)
-- The site's primary colours are blue and white. I ended up really liking the "primary" blue in bootstrap and found it perfect as it was unobtrusive and helped users focus on the content.
+- The site's primary colours are two shades of blue and a yellow. The colours are meant to be somewhat reserved and subtle, allowing for attention to be focused on the images of the products and to further solidify the minimalist design langue.
 - I wanted to deliberately avoid a variety of colour, keeping the site content and information focused. 
+- As development continued I decided to also include white for the shopping bag and check out, as it seemed more appropriate and would instill more confidence in the user making a purchase. While the original colours in this context looked appealing, it did not appear quite right for the payment side of things.
 
 ### Typography: <a name="typo"></a>
 - Site wide, Helvetica Neue is used.
+- A single font was chosen to keep inline with the minimalist design philosophy. 
 
 ### Layout: <a name="layout"></a>
-- The site uses a familiar and intuitive layout.
-- Flask is used to present all content, along with flask forms for all forms on the site.
+- The site uses a typical layout that customers will feel instantly comfortable with.
+- The cart remains visible in the top at all times, regardless of screen size, to ensure that customers can see their total at a glance.
+- Any messages presented to the user are done so through a box that pops up at the cart. This keeps the site feeling dynamic whilst also not becoming cluttered.
+- The products page is kept simple as a grid layout, presenting the items for sale clearly and effectively. 
 
 ### Wireframes: <a name="wireframes"></a>
 
-- The site's design changed slightly in production but the general idea and layout of the wireframe remains and was used to guide the design of the website as I made it.
-- Here is the original wireframe: 
+- The site's design stayed quite true to the wireframes with the colour scheme and general layout being as was originally envisioned.
+- The original wireframe had an image based logo for the company, however this seemed too cluttered in practice so switching to text was decided upon. 
 
 ![](/media/wireframe.png)
 
@@ -117,16 +123,20 @@ The primary goal with the sites UX, in terms of UI, was to make the site easy to
 ### Existing Features <a name="existing"></a>
 - Responsive on all devices.
 - User accounts with passwords properly hashed and cookies for logged in users.
-- Log in, log out and register functionality.
-- Search Function
-- Flask is used for the sites layout.
-- Flask forms are used for all forms.
-- Users can submit, edit and delete their reviews.
+- Users can view past orders on their account, along with storing their details for faster checking out.
+- Log in, log out and register functionality, with email confirmation system in place. (Uses SendGrid).
+- Search Function on products and blog.
+- Contact form (Uses SendGrid).
+- Mailing list (uses MailChimp).
+- Full ecommerce integration with swipe payments.
+- Notification system using Django toasts.
+- Blog that site admins have full CRUD access to through the site's interface (not using Django interface, a more intuitive in site based interface was implemented)
+- Site admin also has full CRUD access to the products directly through the site's interface.
 - Explanations of all material types present on the site. 
  
 
 ### Future Features <a name="future"></a>
-- The reviews could have a like and dislike button, for users to give feedback on reviews and help avoid astroturfing.
+- Blog comments using user accounts, along with profile pictures on the accounts.
 
 ## Technologies Used <a name="tech"></a>
 
@@ -177,9 +187,10 @@ My manual testing process was as follows:
         - Try various things like refreshing the page in different sections.
         - Look for results that broke the styling in anyway.
         - Test different scenarios to see if the site continued worked (for example, I would input search parameters that return no results and see if the site continues functioning after this).
-        - Emulate different errors like 404 to make sure they were being handled correctly.
+        - Ensure that only admin accounts can access certain parts of the site by directly typing in URLs.
     * Mobile only        
-        - Try common gestures like pinch to zoom, rotating orientation.     
+        - Try common gestures like pinch to zoom, rotating orientation.  
+        - Ensure that the drop down menu worked and that all aspects were usuable at all sizes (such as quantity + and - buttons)   
 
     All tests were performed across multiple browsers and OS.
 
@@ -189,31 +200,31 @@ Some examples of manual testing procedures are as follows:
 
 - Expected: User fills in the registration form and an account is created.
 - Testing: Tested the feature by filling in the registration form and submitting it. 
-- Result: The appropriate flash message appears, the cookie is created, and going to the profile page confirms that the account has indeed been created. Further more, manually checking the database shows the user present.
+- Result: The appropriate toast message appears, the cookie is created, the user received a confirmation email, I then follow that procedure and finally go to the profile page to confirm that the account has indeed been created. Further more, manually checking the database shows the user present.
 
 #### Testing 2:
 
 - Expected: User, that has created an account, returns to the site and can log in.
 - Testing: Tested the feature by filling in the login form and submitting it.
-- Result: The appropriate flash message appears, the cookie is created, and the user is redirected to their profile page.
+- Result: The appropriate toast message appears, the cookie is created, and the user is redirected.
 
 #### Testing 3:
 
-- Expected: User, that has created a review, can edit their review.
-- Testing: Tested the feature by going to the profile page, scrolling down to the user's reviews and clicking edit on one of them.
-- Result: The user is redirected to the edit page where the edit form is generated, already populated by the relevant data from their review. Editing this data and clicking submit, then viewing the review on their profile page, confirms that the form is working as intended and the data is being correctly updated.
+- Expected: User can add products to their bag and the correct values and information is shown.
+- Testing: Tested the feature by going to the product page and adding multiple items, some with colour options and some without.
+- Result: The bag is updated with the appropriate toast message. The delivery fee, along with info on the amount needed to reach the free delivery threshold is present, and the correct total price is displayed.
 
 #### Testing 4:
 
-- Expected: User encounters a bad link, or server error, which results in one of the pre-made error pages being displayed.
-- Testing: Tested the feature by typing in deliberately wrong urls, and logging out and trying to access the profile url without the relevant cookie.
-- Result: The user is redirected to either the 404.html or 500.html page depending on the error encountered. 
+- Expected: User wishes to contact the site owner.
+- Testing: Tested the feature by going to the about page and filling in the "Contact Us" form.
+- Result: The email is successfully delivered a short time later using the SendGrid service.
 
 #### Testing 5:
 
-- Expected: User forgets to fill out part of a review form, which should give the user a warning message and not submit the form until all fields have been filled in.
-- Testing: Tested the feature by going to the add review page and deliberately leaving one of the fields empty.
-- Result: The user is alerted as to which field they did not fill in, or in the case of incorrect information in the field then a flash message displaying what must be entered is displayed.
+- Expected: User forgets to fill out part of their payment details, which should give the user a warning and not submit the form until all fields have been filled in correctly.
+- Testing: Tested the feature by going to the add review page and deliberately leaving one of the fields empty and also again deliberately filling in details that don't match the format.
+- Result: The user is alerted as to which field is not correct.
  
       
 ### Bugs: <a name="bugs"></a>
@@ -222,24 +233,31 @@ These are examples of some bugs that my manual testing uncovered, and how I fixe
 
 #### Bug 1:
 
-- Expected: User fills in the review form, clicks submit and the form is entered into the database.
-- Testing: Tested the feature by filling in the review form and clicking submit.
-- Result: Form appeared to behave as intended, however there was no new entry in the database.
-- Fix: I set up console logs for errors to catch any problems, as a result I found that the form was not submitting due to a missing CSRF token. Ensuring that the token was being generated fixed the issue and the form submitted as intended.
+- Expected: Hovering over any parts of the navbar (except for the business name) should have the text turn to yellow. 
+- Testing: Tested the feature by hovering over individual elements.
+- Result: The bag font awesome icon and the price underneath were showing their hover state independently rather than together.
+- Fix: I placed both elements into the same div and through a class tag and css applied the hover effect to both elements at once.
 
 #### Bug 2:
 
 - Expected: When switching to mobile, all content should properly center and be displayed in an easily readible manner.
 - Testing: Tested the feature by viewing the website on a mobile device, and also using the mobile device emulator built into the browser.
-- Result: Most of the site appeared correctly, except for the titles of the review cards which were breaking to a second line and looked very messy. 
-- Fix: I simply made the text smaller and this fixed it.
+- Result: Most of the site appeared correctly, except for the quantity section in the bag. This would break across two lines and part would be obscured.
+- Fix: I ended up changing the layout significantly, although this was mostly due to wanting to make the section more legible and visually clean. However, upon rebuilding this part of the template I paid specific attention to ensuring that responsiveness remained solid across all size of device.
 
 #### Bug 3:
 
-- Expected: User clicks edit on their review and the form is generated with their review's content present.
-- Testing: Tested the feature by logging in as a user with a review in the database, going to profile, and clicking edit under the review.
-- Result: Form appeared and was functional, however the previous review's contents were not generating.
-- Fix: I originally checked for any errors, however none were being presented. I tried posting the various form data to the console where I realized that it was coming up NULL. This lead me to finding the issue which was simply that I had mixed up two different app route variable names. Changing the variable name to the correct one in the app route fixed the issue. 
+- Expected: Upon delploying to Heroku and AWS, the site should appear the same as it does on local.
+- Testing: After the site was deployed, I manually went through each section of the site to check it if was consistent with the local version.
+- Result: Certain image links were broken.
+- Fix: Images that used templating language to get the link worked fine. However, the small number of images that are permanent (the empty bag image, the business logo on the checkout_success.html template) were using direct links to their locations (as in "../media/IMAGE_NAME.FILETYPE") however when the files were being accessed from Amazon Web Services the correct non-local link (as in the full https://aws.amazon.com/...) must be used instead. 
+
+#### Bug 4:
+
+- Expected: Hovering over any parts of the navbar (except for the business name) should have the text turn to yellow. 
+- Testing: Tested the feature by hovering over individual elements.
+- Result: The bag font awesome icon and the price underneath were showing their hover state independently rather than together.
+- Fix: I placed both elements into the same div and through a class tag and css applied the hover effect to both elements at once.
 
 ### Known issues: <a name="issues"></a>
 
@@ -247,9 +265,9 @@ Currently, there are no known issues.
 
 ### Automatic Testing: <a name="auto"></a>
 
-[W3C Validator HTML result](assets/readme/w3chtml.png) (Shows no errors).
+W3C Validator HTML resulted in no errors.
 
-[W3C Validator CSS result](assets/readme/w3ccss.png) (Shows no errors).
+W3C Validator CSS resulted in no errors.
 
 Google Lighthouse results:
 
