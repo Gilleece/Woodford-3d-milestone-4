@@ -2,88 +2,93 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>   
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
 <script>
     // Aligns bootstrap modal vertically, credit to: https://www.tutorialrepublic.com/faq/how-to-align-bootstrap-modal-vertically-center.php
-    $(document).ready(function(){
-        function alignModal(){
+    $(document).ready(function () {
+        function alignModal() {
             var modalDialog = $(this).find(".modal-dialog");
-            
+
             // Applying the top margin on modal to align it vertically center
             modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
         }
         // Align modal when it is displayed
         $(".modal").on("shown.bs.modal", alignModal);
-        
+
         // Align modal when user resize the window
-        $(window).on("resize", function(){
+        $(window).on("resize", function () {
             $(".modal:visible").each(alignModal);
-        });   
+        });
     });
 </script>
 {% endblock %}
 
 
 {% block content %}
-    <div class="container">
-        <div class="row h-100 justify-content-center home-button-row">            
-            <div class=".col-md-2 p-5 button-div">
-                <h4>
-                    <a href="{% url 'blog' %}" class="custom-order-button btn btn-lg rounded-0 text-uppercase py-3">Read Our Blog</a>
-                </h4>
-            </div>
-            <div class=".col-md-2 p-5 button-div">
-                <a href="{% url 'products' %}" class="browse-button btn btn-lg rounded-0 text-uppercase py-3">Browse Our Products</a>
-            </div>
+<div class="container">
+    <div class="row h-100 justify-content-center home-button-row">
+        <div class=".col-md-2 p-5 button-div">
+            <h4>
+                <a href="{% url 'blog' %}" class="custom-order-button btn btn-lg rounded-0 text-uppercase py-3">Read Our
+                    Blog</a>
+            </h4>
+        </div>
+        <div class=".col-md-2 p-5 button-div">
+            <a href="{% url 'products' %}" class="browse-button btn btn-lg rounded-0 text-uppercase py-3">Browse Our
+                Products</a>
         </div>
     </div>
+</div>
 
-    <!-- Mailing List Modal -->
-    <div class="modal fade" id="mailingListModal" tabindex="-1" aria-labelledby="mailingListModal" aria-hidden="true">
+<!-- Mailing List Modal -->
+<div class="modal fade" id="mailingListModal" tabindex="-1" aria-labelledby="mailingListModal" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content bg-text-blue">        
-            <div class="modal-body text-center">
-                <span class="mt-2"><strong>Interested in updates from Woodford 3d?</strong></span>
-                <form class="mt-4" action="{% url 'email_list_signup' %}" method="POST">
-                {% csrf_token %}
-                {{ form | crispy }}            
-            
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="keep-shopping-button btn btn-lg rounded-0" data-dismiss="modal">Close</button>
-                <button id="signupButton" type="submit" class="add-button btn btn-lg rounded-0">Get our newsletter</button>
-            </div>
+        <div class="modal-content bg-text-blue">
+            <form action="{% url 'email_list_signup' %}" method="POST">
+                <div class="modal-body text-center">
+                    <span><strong>Interested in updates from Woodford 3d?</strong></span>
+                    <div class="mt-3">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                    </div>
+                    <div class="modal-footer pb-0">
+                        <button type="button" class="keep-shopping-button btn btn-lg rounded-0"
+                            data-dismiss="modal">Close</button>
+                        <button id="signupButton" type="submit" class="add-button btn btn-lg rounded-0">Get our
+                            newsletter</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-    </div>
-    
-    
+</div>
+
+
 {% endblock %}
 
 {% block postloadjs %}
-    <script>
-        // Shows mailing list modal after 3 seconds, using local storage to ensure user does not see it again. Credit to: https://5balloons.info/bootstrap-modal-pop-up-show-after-a-delay-for-ads-or-email-subscription/
-        if (!sessionStorage.adModal) {
-		setTimeout(function() {
-			$('#mailingListModal').find('.item').first().addClass('active');
-		    $('#mailingListModal').modal({
-		    	backdrop: 'static',
-	    		keyboard: false
-		    });
-		}, 3000);
-	    $('#mailingListModal').carousel({
-		  interval: 3000,
-		  cycle: true
-		});
+<script>
+    // Shows mailing list modal after 3 seconds, using local storage to ensure user does not see it again. Credit to: https://5balloons.info/bootstrap-modal-pop-up-show-after-a-delay-for-ads-or-email-subscription/
+    if (!sessionStorage.adModal) {
+        setTimeout(function () {
+            $('#mailingListModal').find('.item').first().addClass('active');
+            $('#mailingListModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        }, 3000);
+        $('#mailingListModal').carousel({
+            interval: 3000,
+            cycle: true
+        });
         sessionStorage.adModal = 1;
-        }
-    </script>
+    }
+</script>
 {% endblock %}

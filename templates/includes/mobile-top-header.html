@@ -1,21 +1,21 @@
-<li class="list-inline-item">
-    <a class=" text-center d-block d-lg-none" href="{% url 'home' %}">
-        <div>
-            <h3 id="logo-container" class="text-blue hover-class">WOODFORD <span id="title-3d" class="text-yellow">3D</span></h3>
-        </div>
-    </a>
-</li>
-<li class="list-inline-item mobile-icon-padding">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} d-block d-lg-none" href="{% url 'view_bag' %}">
-        <div class="text-center text-blue">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="my-0">
-                {% if grand_total %}
-                    €{{ total_without_delivery|floatformat:2 }}
-                {% else %}
-                    €0.00
-                {% endif %}
-            </p>
-        </div>
-    </a>
-</li>
+    <div class="list-inline-item">
+        <a class="text-center d-block d-lg-none" href="{% url 'home' %}">
+            <div>
+                <h4 class="text-blue hover-class">WOODFORD <span class="text-yellow">3D</span></h4>
+            </div>
+        </a>
+    </div>
+    <div class="mobile-icon-padding">
+        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} d-block d-lg-none" href="{% url 'view_bag' %}">
+            <div class="text-center text-blue m-0">
+                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <p class="m-0">
+                    {% if grand_total %}
+                        €{{ total_without_delivery|floatformat:2 }}
+                    {% else %}
+                        €0.00
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </div>
