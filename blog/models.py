@@ -19,7 +19,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='blog_posts')
     content = models.TextField()
     status = models.CharField(max_length=10, choices=options, default='draft')
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(default="", blank=True)
 
     class Meta:
         ordering = ('-publish',)

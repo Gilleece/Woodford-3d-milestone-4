@@ -6,17 +6,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_rename_publish_date_post_publish'),
+        ("blog", "0002_rename_publish_date_post_publish"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='post',
-            options={'ordering': ('-publish',)},
+            name="post",
+            options={"ordering": ("-publish",)},
         ),
         migrations.RenameField(
-            model_name='post',
-            old_name='slug',
-            new_name='url',
+            model_name="post",
+            old_name="slug",
+            new_name="url",
         ),
     ]
