@@ -35,7 +35,7 @@ This website is an e-commerce site for a small 3D printing business that sells a
 
 ## UX <a name="UX"></a>
 
-The site was designed with an extremely clean and minimalist approach in mind. The idea of the business is to have a small number of items that are sold at any one time, so drawing the user's primary attention to these items is key, along with a focus on the attention to detail and passion of the business which is highlighted through the blog. The site deliberately avoids any additional information than what is strictly necessary for the products (Price, image, name, description). The account/payment process is kept as clear and straightforward as possible, with some emphasis on the free shipping threshold as a means of enticing additional sales on the same transaction.
+The site was designed with a clean and minimalist approach in mind. The idea of the business is to have a small number of items that are sold at any one time, so drawing the user's primary attention to these items is key, along with a focus on the attention to detail and passion of the business which is highlighted through the blog. The site deliberately avoids any additional information than what is strictly necessary for the products (Price, image, name, description). The account/payment process is kept as clear and straightforward as possible, with some emphasis on the free shipping threshold as a means of enticing additional sales on the same transaction.
 
 The mailing list that pops up is meant to be useful and non-intrusive. As soon as a customer sees it, regardless of if they sign up or not, a flag is added to local storage through JS with the intention that they will not be pestered by the modal appearing again. This is to keep the site as frictionless as possible while also briefly initally presenting them with the option to stay informed about the business as new products develop. 
 
@@ -123,8 +123,6 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
 
 - Formatting was assisted with the Black formatter.
 - A .flake8 file was added to address certain false flags in the linter, along with helping to keep the project uncluttered and ensure consistent formatting.
-
-![](/media/db-schema.png)
 
 ## Features <a name="features"></a>
 
