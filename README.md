@@ -128,9 +128,9 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
 - Search Function on products and blog.
 - Contact form (Uses SendGrid).
 - Mailing list (uses MailChimp).
-- Full ecommerce integration with swipe payments.
+- Full ecommerce integration with Stripe payments.
 - Notification system using Django toasts.
-- Blog that site admins have full CRUD access to through the site's interface (not using Django interface, a more intuitive in site based interface was implemented)
+- Blog that site admins have full CRUD access to through the site's interface (not using Django interface, a more intuitive in site based interface was implemented).
 - Site admin also has full CRUD access to the products directly through the site's interface.
 - Explanations of all material types present on the site. 
  
@@ -177,7 +177,7 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
 1. [Google Fonts](https://fonts.google.com/)
     - I used Google Fonts to provide the font used sitewide. 
 1. [SQLite3](https://www.sqlite.org/releaselog/3_32_3.html)
-    - I used sqlite as database during development.
+    - I used sqlite as the database during development.
 1. [PostgreSQL](https://www.postgresql.org/)
     - I used PostgreSQL as the database for live deployment.
 1. [Stripe](https://stripe.com/)

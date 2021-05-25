@@ -1,4 +1,5 @@
 let countrySelected = $('#id_default_country').val();
+// Styles the country selection field to be consistent with the other form fields
 if(!countrySelected) {
     $('#id_default_country').css('color', '#aab7c4');
 };

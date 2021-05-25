@@ -84,8 +84,8 @@
 
 {% block postloadjs %}  
     {% for blog in blogs %}
-        <!-- Gives a preview of the blog post text on each card -->
         <script>
+            // Gives a preview of the blog post text on each card
             if ($('#text-{{ blog.url }}').text().length > 75) {
                 let blurb = $('#text-{{ blog.url }}').text();
                 blurb = blurb.substr(0,75) + '...';

@@ -6,7 +6,9 @@ from marketing.models import Signup
 
 
 def index(request):
-    """ A view to return the index page and take mailing list signups """
+    """
+    A view to return the index page and take mailing list signups
+    """
     form = EmailSignupForm()
     if request.method == "POST":
         email = request.POST["email"]

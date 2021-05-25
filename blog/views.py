@@ -8,7 +8,9 @@ from .forms import BlogForm
 
 
 def all_posts(request):
-    """ A view to return the main blog page """
+    """
+    A view to return the main blog page
+    """
 
     blogs = Post.objects.all()
     query = None
@@ -33,7 +35,9 @@ def all_posts(request):
 
 
 def blog_post(request, url):
-    """ A view to return the main blog page """
+    """
+    A view to return the main blog page
+    """
 
     blog = get_object_or_404(Post, url=url)
 
@@ -46,7 +50,9 @@ def blog_post(request, url):
 
 @login_required
 def add_post(request):
-    """ Add a post to the blog """
+    """
+    Add a post to the blog
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -74,7 +80,9 @@ def add_post(request):
 
 @login_required
 def edit_post(request, url):
-    """ Edit a blog post """
+    """
+    Edit a blog post
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -106,7 +114,9 @@ def edit_post(request, url):
 
 @login_required
 def delete_post(request, url):
-    """ Delete a post from the blog """
+    """
+    Delete a post from the blog
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

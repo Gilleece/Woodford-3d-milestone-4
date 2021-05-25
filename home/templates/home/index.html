@@ -75,7 +75,7 @@
 
 {% block postloadjs %}
 <script>
-    // Shows mailing list modal after 3 seconds, using local storage to ensure user does not see it again. Credit to: https://5balloons.info/bootstrap-modal-pop-up-show-after-a-delay-for-ads-or-email-subscription/
+    // Shows mailing list modal after 3 seconds, using local storage to ensure user does not see it again. Based on: https://5balloons.info/bootstrap-modal-pop-up-show-after-a-delay-for-ads-or-email-subscription/
     if (!sessionStorage.adModal) {
         setTimeout(function () {
             $('#mailingListModal').find('.item').first().addClass('active');

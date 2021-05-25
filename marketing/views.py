@@ -16,6 +16,9 @@ members_endpoint = f'{api_url}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
 
 
 def subscribe(email):
+    """
+    View for handling sending the subscription to mailchimp
+    """
     data = {
         "email_address": email,
         "status": "subscribed"
@@ -29,6 +32,9 @@ def subscribe(email):
 
 
 def email_list_signup(request):
+    """
+    Checks if user is signed up and if not sends the email address to mailchimp
+    """
     form = EmailSignupForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():

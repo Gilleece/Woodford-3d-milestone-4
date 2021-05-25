@@ -6,7 +6,9 @@ from .forms import ContactForm
 
 
 def about(request):
-    """A view to return the custom order/print page"""
+    """
+    A view to return the about page
+    """
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
