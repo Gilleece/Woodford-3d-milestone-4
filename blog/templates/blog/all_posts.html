@@ -67,6 +67,37 @@
                                 </div>                                
                             </div>                                                     
                         {% endif %}
+
+                        {% if blog.status == 'draft' %}
+                            <div class="col-10 col-lg-4">
+                                <div class="card mb-3 bg-text-blue card-flyer">
+                                    <div class="image-box">
+                                        {% if blog.image %}
+                                            <a href="{% url 'blog_post' blog.url %}">
+                                                <img class="card-img-top blog-card-img" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'blog_post' blog.url %}">
+                                                <img class="card-img-top blog-card-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ blog.title }}">
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card-text-box">
+                                            <small class="ml-3">
+                                                <a href="{% url 'edit_post' blog.url %}">Edit</a> | 
+                                                <a class="text-danger" href="{% url 'delete_post' blog.url %}">Delete</a>
+                                            </small>
+                                        <a href="{% url 'blog_post' blog.url %}">
+                                            <div class="card-body text-black">
+                                                <h5 class="card-title text-center"><strong>DRAFT: {{ blog.title }}</strong></h5>
+                                                <p id="text-{{ blog.url }}" class="card-text blog-blurb">{{ blog.content }}</p>
+                                                <p class="card-text"><small class="text-muted">Posted: {{ blog.publish }} by <em>{{ blog.author }}</em></small></p>
+                                            </div>
+                                        </a>  
+                                    </div>                                   
+                                </div>                                
+                            </div>                                                     
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
