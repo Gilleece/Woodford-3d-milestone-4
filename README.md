@@ -252,6 +252,30 @@ Some examples of manual testing procedures are as follows:
 - Expected: User forgets to fill out part of their payment details, which should give the user a warning and not submit the form until all fields have been filled in correctly.
 - Testing: Tested the feature by going to the add review page and deliberately leaving one of the fields empty and also again deliberately filling in details that don't match the format.
 - Result: The user is alerted as to which field is not correct.
+
+#### Testing 5:
+
+- Expected: User wants to log out.
+- Testing: While logged into an account, click on log out.
+- Result: The user is logged out correctly and the cookie is removed.
+
+#### Testing 6:
+
+- Expected: Viewing the blog as a non-superuser should only show published posts.
+- Testing: While logged into an non-superuser account, go to the blog on the site.
+- Result: Only posts marked as "published" are visible.
+
+#### Testing 7:
+
+- Expected: Viewing the site while logged in as a superuser should show additional options for managing site content.
+- Testing: While logged into a superuser account, go to the blog, go to the products page and check the profile drop down in the navbar.
+- Result: Additional links and posts are visible, that while logged out or logged in as an non-superuser are not accessible. 
+
+#### Testing 8:
+
+- Expected: Manually typing in links for parts of the site only intended for superusers should redirect the user.
+- Testing: While logged into an non-superuser account, or not logged in, type in a url such as "https://woodford3d.herokuapp.com/products/edit/2/".
+- Result: Successfully redirects the user (to sign in if logged out, or to index.html if logged in as non-superuser)
  
       
 ### Bugs: <a name="bugs"></a>
