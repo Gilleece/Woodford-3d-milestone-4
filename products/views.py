@@ -16,28 +16,27 @@ def all_products(request):
     query = None
 
     if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
+        if "q" in request.GET:
+            query = request.GET["q"]
             if not query:
-                messages.error(request,
-                               "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("products"))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     context = {
-        'products': products,
-        'search_term': query,
+        "products": products,
+        "search_term": query,
     }
 
-    return render(request, 'product/products.html', context)
+    return render(request, "product/products.html", context)
 
     context = {
-        'products': products,
+        "products": products,
     }
 
-    return render(request, 'product/products.html', context)
+    return render(request, "product/products.html", context)
 
 
 def product_detail(request, product_id):
@@ -48,10 +47,10 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product': product,
+        "product": product,
     }
 
-    return render(request, 'product/product_detail.html', context)
+    return render(request, "product/product_detail.html", context)
 
 
 @login_required
@@ -60,25 +59,27 @@ def add_product(request):
     Add a product to the store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.info(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            messages.info(request, "Successfully added product!")
+            return redirect(reverse("add_product"))
         else:
-            messages.error(request,
-                           'Failed to add product. \
-                            Please ensure the form is valid.')
+            messages.error(
+                request,
+                "Failed to add product. \
+                            Please ensure the form is valid.",
+            )
     else:
         form = ProductForm()
 
-    template = 'product/add_product.html'
+    template = "product/add_product.html"
     context = {
-        'form': form,
+        "form": form,
     }
 
     return render(request, template, context)
@@ -90,27 +91,30 @@ def edit_product(request, product_id):
     Edit a product in the store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
     product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             product = form.save()
-            messages.info(request, 'Successfully updated product!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            messages.info(request, "Successfully updated product!")
+            return redirect(reverse("product_detail", args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. \
-                           Please ensure the form is valid.')
+            messages.error(
+                request,
+                "Failed to update product. \
+                           Please ensure the form is valid.",
+            )
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        messages.info(request, f"You are editing {product.name}")
 
-    template = 'product/edit_product.html'
+    template = "product/edit_product.html"
     context = {
-        'form': form,
-        'product': product,
+        "form": form,
+        "product": product,
     }
 
     return render(request, template, context)
@@ -122,10 +126,10 @@ def delete_product(request, product_id):
     Delete a product from the store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.info(request, 'Product deleted!')
-    return redirect(reverse('products'))
+    messages.info(request, "Product deleted!")
+    return redirect(reverse("products"))

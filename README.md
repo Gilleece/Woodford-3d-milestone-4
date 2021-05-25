@@ -17,6 +17,7 @@ This website is an e-commerce site for a small 3D printing business that sells a
     3. [Layout](#layout)
     4. [Wireframes](#wireframes)
     5. [Database Schema](#schema)
+    6. [Formatting](#format)
 3. [Features](#features)
     1. [Existing Features](#existing)
     2. [Future Features](#future)
@@ -118,6 +119,13 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
 
 ![](/media/db-schema.png)
 
+### Formatting: <a name="format"></a> 
+
+- Formatting was assisted with the Black formatter.
+- A .flake8 file was added to address certain false flags in the linter, along with helping to keep the project uncluttered and ensure consistent formatting.
+
+![](/media/db-schema.png)
+
 ## Features <a name="features"></a>
 
 ### Existing Features <a name="existing"></a>
@@ -182,6 +190,8 @@ The mailing list that pops up is meant to be useful and non-intrusive. As soon a
     - I used PostgreSQL as the database for live deployment.
 1. [Stripe](https://stripe.com/)
     - Stripe is the payment processor on the site.
+1. [Black](https://github.com/psf/black)
+    - I used black to help keep consistent and clear formatting across the project.
 
 
 ## Testing <a name="testing"></a>

@@ -16,22 +16,21 @@ def all_posts(request):
     query = None
 
     if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
+        if "q" in request.GET:
+            query = request.GET["q"]
             if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
-                return redirect(reverse('blog'))
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse("blog"))
 
             queries = Q(title__icontains=query) | Q(content__icontains=query)
             blogs = blogs.filter(queries)
 
     context = {
-        'blogs': blogs,
-        'search_term': query,
+        "blogs": blogs,
+        "search_term": query,
     }
 
-    return render(request, 'blog/all_posts.html', context)
+    return render(request, "blog/all_posts.html", context)
 
 
 def blog_post(request, url):
@@ -42,10 +41,10 @@ def blog_post(request, url):
     blog = get_object_or_404(Post, url=url)
 
     context = {
-        'blog': blog,
+        "blog": blog,
     }
 
-    return render(request, 'blog/blog_post.html', context)
+    return render(request, "blog/blog_post.html", context)
 
 
 @login_required
@@ -53,26 +52,38 @@ def add_post(request):
     """
     Add a post to the blog
     """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
 
-    if request.method == 'POST':
+    """
+    Permissions --> Models e.g. Cannot delete a model
+
+    3 Groups:
+    * Tech --> Read Only
+    * Office --> Create accounts
+    * Manager --> Create Blogs, Create accounts
+
+    superuser --> DB Admin, Tech Lead, Owner
+    """
+
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+
+    if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.info(request, 'Successfully added post!')
-            return redirect(reverse('add_post'))
+            messages.info(request, "Successfully added post!")
+            return redirect(reverse("add_post"))
         else:
             messages.error(
-                request, 'Failed to add post. Please ensure the form is valid.'
-                )
+                request, "Failed to add post. Please ensure the form is valid."
+            )
     else:
         form = BlogForm()
 
-    template = 'blog/add_post.html'
+    template = "blog/add_post.html"
     context = {
-        'form': form,
+        "form": form,
     }
 
     return render(request, template, context)
@@ -84,29 +95,28 @@ def edit_post(request, url):
     Edit a blog post
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
     blog = get_object_or_404(Post, url=url)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             blog = form.save()
-            messages.info(request, 'Successfully updated product!')
-            return redirect(reverse('blog_post', args=[url]))
+            messages.info(request, "Successfully updated product!")
+            return redirect(reverse("blog_post", args=[url]))
         else:
             messages.error(
-                request,
-                'Failed to update product. Please ensure the form is valid.'
-                )
+                request, "Failed to update product. Please ensure the form is valid."
+            )
     else:
         form = BlogForm(instance=blog)
-        messages.info(request, f'You are editing the post: {blog.title}')
+        messages.info(request, f"You are editing the post: {blog.title}")
 
-    template = 'blog/edit_post.html'
+    template = "blog/edit_post.html"
     context = {
-        'form': form,
-        'blog': blog,
+        "form": form,
+        "blog": blog,
     }
 
     return render(request, template, context)
@@ -118,10 +128,10 @@ def delete_post(request, url):
     Delete a post from the blog
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
 
     blog = get_object_or_404(Post, url=url)
     blog.delete()
-    messages.info(request, 'Post deleted!')
-    return redirect(reverse('blog'))
+    messages.info(request, "Post deleted!")
+    return redirect(reverse("blog"))

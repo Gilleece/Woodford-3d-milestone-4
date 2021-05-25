@@ -6,15 +6,15 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('checkout', '0006_order_used_coupon'),
+        ("checkout", "0006_order_used_coupon"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='Coupon',
+            name="Coupon",
         ),
         migrations.RemoveField(
-            model_name='order',
-            name='used_coupon',
+            model_name="order",
+            name="used_coupon",
         ),
     ]

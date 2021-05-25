@@ -16,7 +16,5 @@ def index(request):
         new_signup.email = email
         new_signup.save()
 
-    context = {
-        'form': form
-    }
-    return render(request, 'home/index.html', context)
+    context = {"form": form}
+    return render(request, "home/index.html", context)

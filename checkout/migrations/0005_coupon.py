@@ -6,19 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('checkout', '0004_order_user_profile'),
+        ("checkout", "0004_order_user_profile"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Coupon',
+            name="Coupon",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('code', models.CharField(max_length=50, unique=True)),
-                ('value', models.IntegerField()),
-                ('active', models.BooleanField()),
-                ('num_available', models.IntegerField(default=1)),
-                ('num_used', models.IntegerField(default=0)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("code", models.CharField(max_length=50, unique=True)),
+                ("value", models.IntegerField()),
+                ("active", models.BooleanField()),
+                ("num_available", models.IntegerField(default=1)),
+                ("num_used", models.IntegerField(default=0)),
             ],
         ),
     ]

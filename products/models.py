@@ -5,6 +5,7 @@ class Product(models.Model):
     """
     Model for products within the store
     """
+
     name = models.CharField(max_length=254)
     description = models.TextField()
     has_colors = models.BooleanField(default=False, null=True, blank=True)

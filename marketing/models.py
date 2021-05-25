@@ -5,6 +5,7 @@ class Signup(models.Model):
     """
     Model for signups to mailing list
     """
+
     email = models.EmailField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
