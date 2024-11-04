@@ -1,7 +1,5 @@
 # Woodford 3D - Milestone 4 Project
 
-[Live link](https://woodford3d.herokuapp.com/)
-
 [GitHub Repository](https://github.com/Gilleece/Woodford-3d-milestone-4)
 
 ![](media/responsiveness.png)
